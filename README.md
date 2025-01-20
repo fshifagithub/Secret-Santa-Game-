@@ -65,3 +65,38 @@ secret-santa-result.csv:
 |---------------|---------------------|-------------------|-----------------------|
 | Alice         | alice@example.com   | john              | john@example.com       |
 | Bob           | bob@example.com     | benny            | benny@example.com     |
+
+
+## working
+
+This script implements a Secret Santa assignment program using Python and pandas. The purpose is to randomly assign each employee a "Secret Child"  while respecting certain constraints.
+
+- load_csv(file_path)
+Purpose: Reads a CSV file into a pandas DataFrame.
+Error Handling: If the file is not found, it returns None and logs an error.
+
+-get_random(rows_as_list, previous_data, email, assigned_emails)
+
+Purpose: Finds a random "Secret Child" for a given employee based on the following constraints:
+The "Secret Child" was not the same as the one assigned in the previous year.
+The "Secret Child" is not the same as the employee themselves.
+The "Secret Child" has not already been assigned.
+Logic: Loops through previous data to avoid assigning the same child as last year. It uses a while loop to ensure a valid child is chosen.
+
+-secret_santa()
+
+ - Convert excel files into csv
+ - Load Input Files: Two CSV files are loaded:
+ - Employee-List - Copy.csv: Contains the current list of employees.
+ - Secret-Santa-Game-Result-2023 - Copy.csv: Contains the previous year's assignments.
+   
+
+
+Initialize a dictionary data to store the new assignments.
+Assign Secret Children:  For each employee, call get_random to select a valid Secret Child.  Append the results to the data dictionary.
+Log a warning if no valid Secret Child is found.
+
+Save Results:
+Convert the data dictionary to a pandas DataFrame.
+Save the results as a CSV file named secret-santa-result.csv.
+
