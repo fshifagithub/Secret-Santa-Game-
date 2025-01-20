@@ -34,7 +34,7 @@ The company "Acme" has decided to organize a Secret Santa event for its employee
 ## Usage
 
 1. Run the script:
-   python secret_santa.py
+   python secret_santa_game.ipynb
 2. The program reads the input files, performs the Secret Santa assignments, and generates an output file:
    - 'secret-santa-result.csv': Contains the Secret Santa assignments.
 
